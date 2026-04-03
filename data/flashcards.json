@@ -1,0 +1,216 @@
+{
+  "flashcards": [
+    {
+      "id": 1,
+      "title": "SELECT - Sélection de données",
+      "category": "Requêtes de base",
+      "content": "La commande SELECT permet de sélectionner des données dans une table.\n\nSyntaxe de base :\nSELECT colonne1, colonne2\nFROM nom_table;\n\nPour sélectionner toutes les colonnes :\nSELECT * FROM nom_table;",
+      "author": "Admin",
+      "createdAt": "2025-01-15T10:00:00Z"
+    },
+    {
+      "id": 2,
+      "title": "WHERE - Filtrer les résultats",
+      "category": "Requêtes de base",
+      "content": "La clause WHERE permet de filtrer les résultats selon une condition.\n\nSyntaxe :\nSELECT colonne1, colonne2\nFROM nom_table\nWHERE condition;\n\nOpérateurs de comparaison : =, !=, <, >, <=, >=\nOpérateurs logiques : AND, OR, NOT",
+      "author": "Admin",
+      "createdAt": "2025-01-15T10:30:00Z"
+    },
+    {
+      "id": 3,
+      "title": "INSERT - Ajouter des données",
+      "category": "Modification de données",
+      "content": "La commande INSERT permet d'insérer de nouvelles lignes dans une table.\n\nSyntaxe :\nINSERT INTO nom_table (colonne1, colonne2)\nVALUES (valeur1, valeur2);\n\nInsert multiple :\nINSERT INTO nom_table (colonne1, colonne2)\nVALUES \n  (valeur1, valeur2),\n  (valeur3, valeur4);",
+      "author": "Admin",
+      "createdAt": "2025-01-15T11:00:00Z"
+    },
+    {
+      "id": 4,
+      "title": "UPDATE - Modifier des données",
+      "category": "Modification de données",
+      "content": "La commande UPDATE permet de modifier des lignes existantes.\n\nSyntaxe :\nUPDATE nom_table\nSET colonne1 = nouvelle_valeur\nWHERE condition;\n\n⚠️ Sans WHERE, TOUTES les lignes seront modifiées !",
+      "author": "Admin",
+      "createdAt": "2025-01-15T11:30:00Z"
+    },
+    {
+      "id": 5,
+      "title": "DELETE - Supprimer des données",
+      "category": "Modification de données",
+      "content": "La commande DELETE permet de supprimer des lignes d'une table.\n\nSyntaxe :\nDELETE FROM nom_table\nWHERE condition;\n\n⚠️ Sans WHERE, TOUTES les lignes seront supprimées !\n\nPour vider complètement une table :\nTRUNCATE TABLE nom_table;",
+      "author": "Admin",
+      "createdAt": "2025-01-15T12:00:00Z"
+    },
+    {
+      "id": 6,
+      "title": "JOIN - Combiner des tables",
+      "category": "Jointures",
+      "content": "Les JOIN permettent de combiner des données de plusieurs tables.\n\nINNER JOIN - Retourne les lignes quand il y a une correspondance dans les deux tables.\n\nSELECT * \nFROM table1\nINNER JOIN table2 ON table1.id = table2.fk;\n\nTypes de JOIN :\n- INNER JOIN\n- LEFT JOIN\n- RIGHT JOIN\n- FULL OUTER JOIN",
+      "author": "Admin",
+      "createdAt": "2025-01-15T14:00:00Z"
+    },
+    {
+      "id": 7,
+      "title": "LEFT JOIN et RIGHT JOIN",
+      "category": "Jointures",
+      "content": "LEFT JOIN : Retourne toutes les lignes de la table de gauche + les correspondances de droite.\n\nSELECT * \nFROM table1\nLEFT JOIN table2 ON table1.id = table2.fk;\n\nRIGHT JOIN : Retourne toutes les lignes de la table de droite + les correspondances de gauche.\n\nSELECT * \nFROM table1\nRIGHT JOIN table2 ON table1.id = table2.fk;",
+      "author": "Admin",
+      "createdAt": "2025-01-15T14:30:00Z"
+    },
+    {
+      "id": 8,
+      "title": "GROUP BY - Regroupement",
+      "category": "Agrégation",
+      "content": "GROUP BY permet de regrouper des lignes ayant la même valeur.\n\nSyntaxe :\nSELECT colonne, COUNT(*)\nFROM nom_table\nGROUP BY colonne;\n\nFonctions d'agrégation :\n- COUNT() - Compteur\n- SUM() - Somme\n- AVG() - Moyenne\n- MIN() - Minimum\n- MAX() - Maximum",
+      "author": "Admin",
+      "createdAt": "2025-01-15T15:00:00Z"
+    },
+    {
+      "id": 9,
+      "title": "HAVING - Filtrer après GROUP BY",
+      "category": "Agrégation",
+      "content": "HAVING filtre les résultats après un GROUP BY (équivalent de WHERE pour les groupes).\n\nSyntaxe :\nSELECT colonne, COUNT(*) as total\nFROM nom_table\nGROUP BY colonne\nHAVING COUNT(*) > 1;\n\nWHERE vs HAVING :\n- WHERE filtre AVANT le regroupement\n- HAVING filtre APRÈS le regroupement",
+      "author": "Admin",
+      "createdAt": "2025-01-15T15:30:00Z"
+    },
+    {
+      "id": 10,
+      "title": "ORDER BY - Tri des résultats",
+      "category": "Requêtes de base",
+      "content": "ORDER BY permet de trier les résultats.\n\nSyntaxe :\nSELECT * \nFROM nom_table\nORDER BY colonne ASC;  -- Croissant\n\nORDER BY colonne DESC; -- Décroissant\n\nTri multiple :\nORDER BY colonne1 ASC, colonne2 DESC;",
+      "author": "Admin",
+      "createdAt": "2025-01-15T16:00:00Z"
+    },
+    {
+      "id": 11,
+      "title": "CREATE TABLE - Créer une table",
+      "category": "DDL - Définition",
+      "content": "CREATE TABLE crée une nouvelle table.\n\nSyntaxe :\nCREATE TABLE nom_table (\n    id INT PRIMARY KEY AUTO_INCREMENT,\n    nom VARCHAR(100) NOT NULL,\n    email VARCHAR(255) UNIQUE,\n    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP\n);\n\nTypes courants :\n- INT, VARCHAR(n), TEXT, BOOLEAN\n- DATE, DATETIME, TIMESTAMP\n- DECIMAL(p,s), FLOAT, DOUBLE",
+      "author": "Admin",
+      "createdAt": "2025-01-15T16:30:00Z"
+    },
+    {
+      "id": 12,
+      "title": "ALTER TABLE - Modifier une table",
+      "category": "DDL - Définition",
+      "content": "ALTER TABLE modifie la structure d'une table.\n\nAjouter une colonne :\nALTER TABLE nom_table\nADD colonne TYPE;\n\nSupprimer une colonne :\nALTER TABLE nom_table\nDROP COLUMN colonne;\n\nModifier une colonne :\nALTER TABLE nom_table\nMODIFY COLUMN colonne TYPE;",
+      "author": "Admin",
+      "createdAt": "2025-01-15T17:00:00Z"
+    },
+    {
+      "id": 13,
+      "title": "DROP TABLE - Supprimer une table",
+      "category": "DDL - Définition",
+      "content": "DROP TABLE supprime définitivement une table et toutes ses données.\n\nSyntaxe :\nDROP TABLE nom_table;\n\n⚠️ Cette action est irréversible !\n\nPour vider sans supprimer :\nTRUNCATE TABLE nom_table;\n\nPour supprimer si elle existe :\nDROP TABLE IF EXISTS nom_table;",
+      "author": "Admin",
+      "createdAt": "2025-01-15T17:30:00Z"
+    },
+    {
+      "id": 14,
+      "title": "Les clés - Primaire et Étrangère",
+      "category": "Concepts fondamentaux",
+      "content": "CLÉ PRIMAIRE (PRIMARY KEY) :\n- Identifiant unique de chaque ligne\n- Ne peut être NULL\n- Une table a une seule PK\n\nCLÉ ÉTRANGÈRE (FOREIGN KEY) :\n- Référence la PK d'une autre table\n- Permet de lier les tables entre elles\n- Peut être NULL et dupliquée\n\nSyntaxe FK :\nFOREIGN KEY (colonne) REFERENCES autre_table(colonne)",
+      "author": "Admin",
+      "createdAt": "2025-01-15T18:00:00Z"
+    },
+    {
+      "id": 15,
+      "title": "Les index - Optimisation",
+      "category": "Concepts fondamentaux",
+      "content": "Les index accélèrent les recherches dans une table.\n\nCréer un index :\nCREATE INDEX idx_nom ON nom_table(colonne);\n\nIndex unique (pas de doublons) :\nCREATE UNIQUE INDEX idx_nom ON nom_table(colonne);\n\nSupprimer un index :\nDROP INDEX idx_nom ON nom_table;\n\n⚠️ Les index accélèrent les SELECT mais ralentissent les INSERT/UPDATE.",
+      "author": "Admin",
+      "createdAt": "2025-01-15T18:30:00Z"
+    },
+    {
+      "id": 16,
+      "title": "EXPLAIN - Analyse des requêtes",
+      "category": "Optimisation Avancée",
+      "content": "EXPLAIN permet d'analyser le plan d'exécution d'une requête.\n\nSyntaxe :\nEXPLAIN SELECT * FROM nom_table WHERE colonne = 'valeur';\n\nOu avec MySQL :\nEXPLAIN ANALYZE SELECT...\n\nCe qu'il faut surveiller :\n- type : ALL (scan complet) est mauvais\n- rows : nombre de lignes examinées\n- key : index utilisé\n- Extra : Using filesort, Using temporary = problèmes",
+      "author": "Admin",
+      "createdAt": "2025-01-16T10:00:00Z"
+    },
+    {
+      "id": 17,
+      "title": "INDEX B-Tree vs Hash",
+      "category": "Optimisation Avancée",
+      "content": "Types d'index dans MySQL :\n\nB-TREE (défaut) :\n- Utilisé pour =, <, >, BETWEEN, LIKE\n- Arbre balancé, efficace pour ranges\n- default\n\nHASH :\n- Utilisé pour = uniquement\n- Très rapide pour égalités exactes\n- CREATE INDEX USING HASH ON...\n\nFULLTEXT :\n- Recherche en texte integral\n- Pour colonnes TEXT/VARCHAR\n\nSPATIAL :\n- Données géographiques\n- Géométrie, coordonnées",
+      "author": "Admin",
+      "createdAt": "2025-01-16T10:30:00Z"
+    },
+    {
+      "id": 18,
+      "title": "PARTITIONING - Partitionnement",
+      "category": "Optimisation Avancée",
+      "content": "Le partitionnement divise une grande table en plusieurs parties physiques.\n\nPartition par RANGE :\nCREATE TABLE ventes (\n    id INT,\n    date_vente DATE\n)\nPARTITION BY RANGE (YEAR(date_vente)) (\n    PARTITION p2020 VALUES LESS THAN 2021,\n    PARTITION p2021 VALUES LESS THAN 2022,\n    PARTITION p2022 VALUES LESS THAN 2023,\n    PARTITION p2023 VALUES LESS THAN MAXVALUE\n);\n\nAvantages :\n- Requêtes plus rapides sur grandes tables\n- Maintenance facilitée\n- Archive par partition",
+      "author": "Admin",
+      "createdAt": "2025-01-16T11:00:00Z"
+    },
+    {
+      "id": 19,
+      "title": "VIEW - Vues SQL",
+      "category": "Concepts Avancés",
+      "content": "Une VIEW est une table virtuelle basée sur une requête.\n\nCréer une vue :\nCREATE VIEW vue_clients_actifs AS\nSELECT nom, email\nFROM clients\nWHERE actif = 1;\n\nUtiliser une vue :\nSELECT * FROM vue_clients_actifs;\n\nTypes de vues :\n- Simple : une seule table\n- Complexe : JOIN, GROUP BY\n- Materialized : stocke physiquement les résultats",
+      "author": "Admin",
+      "createdAt": "2025-01-16T11:30:00Z"
+    },
+    {
+      "id": 20,
+      "title": "STORED PROCEDURE - Procédures stockées",
+      "category": "Concepts Avancés",
+      "content": "Une procédure stockée est du code SQL enregistré dans la BDD.\n\nCREATE PROCEDURE get_client(IN id INT)\nBEGIN\n    SELECT * FROM clients WHERE client_id = id;\nEND;\n\nAppel :\nCALL get_client(5);\n\nDELIMITER //\nCREATE PROCEDURE insert_client(\n    IN nom VARCHAR(100),\n    IN email VARCHAR(255)\n)\nBEGIN\n    INSERT INTO clients (nom, email) VALUES (nom, email);\nEND //\nDELIMITER ;\n\nAvantages :\n- Réduit le traffic réseau\n- Centralise la logique\n- Plus rapide (compilé)",
+      "author": "Admin",
+      "createdAt": "2025-01-16T12:00:00Z"
+    },
+    {
+      "id": 21,
+      "title": "TRIGGER - Déclencheurs",
+      "category": "Concepts Avancés",
+      "content": "Un trigger exécute du code automatiquement lors d'un événement.\n\nSyntaxe :\nCREATE TRIGGER nom_trigger\nAFTER INSERT ON commandes\nFOR EACH ROW\nBEGIN\n    INSERT INTO log (message) \n    VALUES ('Nouvelle commande');\nEND;\n\nTypes d'événements :\n- BEFORE/AFTER INSERT\n- BEFORE/AFTER UPDATE\n- BEFORE/AFTER DELETE\n\nNEW et OLD :\n- NEW.colonne : nouvelle valeur\n- OLD.colonne : ancienne valeur",
+      "author": "Admin",
+      "createdAt": "2025-01-16T12:30:00Z"
+    },
+    {
+      "id": 22,
+      "title": "TRANSACTION - COMMIT et ROLLBACK",
+      "category": "Transactions",
+      "content": "Une transaction permet de regrouper plusieurs opérations.\n\nBEGIN TRANSACTION;\nUPDATE comptes SET solde = solde - 100 WHERE id = 1;\nUPDATE comptes SET solde = solde + 100 WHERE id = 2;\nCOMMIT; -- Valide les changements\n\nOu annuler :\nBEGIN TRANSACTION;\nUPDATE comptes SET solde = solde - 100 WHERE id = 1;\nROLLBACK; -- Annule tout\n\nPropriétés ACID :\n- Atomicité : tout ou rien\n- Cohérence : données valides\n- Isolation : transactions indépendantes\n- Durabilité : modifications permanentes",
+      "author": "Admin",
+      "createdAt": "2025-01-16T13:00:00Z"
+    },
+    {
+      "id": 23,
+      "title": "LOCKING - Verrouillage",
+      "category": "Transactions",
+      "content": "Le verrouillage gère l'accès concurrent aux données.\n\nVerrouillage explicite :\nSELECT * FROM clients \nWHERE id = 1 \nFOR UPDATE; -- Verrouille la ligne\n\nTypes de verrous :\n- SHARED : lecture seule, plusieurs peuvent lire\n- EXCLUSIVE : modification, bloque les autres\n\nNiveau d'isolation :\n- READ UNCOMMITTED\n- READ COMMITTED (défaut Oracle)\n- REPEATABLE READ (défaut MySQL)\n- SERIALIZABLE : le plus strict\n\nSET TRANSACTION ISOLATION LEVEL \nREAD COMMITTED;",
+      "author": "Admin",
+      "createdAt": "2025-01-16T13:30:00Z"
+    },
+    {
+      "id": 24,
+      "title": "Best Practices - Optimisation SQL",
+      "category": "Optimisation Avancée",
+      "content": "Règles d'or pour des requêtes performantes :\n\n1. Toujours filtrer avec WHERE\n2. Eviter SELECT *, spécifier les colonnes\n3. Utiliser les index sur les colonnes filtrées\n4. Eviter les fonctions sur les colonnes indexées\n   MAUVAIS : WHERE YEAR(date) = 2023\n   BON : WHERE date >= '2023-01-01'\n5. Preferer UNION ALL à UNION (pas de dédoublonnage)\n6. Eviter les sous-requêtes corrélées\n7. Utiliser EXISTS au lieu de IN pour les sous-requêtes\n8. LIMIT pour les tests/pagination",
+      "author": "Admin",
+      "createdAt": "2025-01-16T14:00:00Z"
+    },
+    {
+      "id": 25,
+      "title": "CURSOR - Parcours ligne par ligne",
+      "category": "Concepts Avancés",
+      "content": "Un cursor permet de parcourir les résultats ligne par ligne.\n\nDELIMITER //\nCREATE PROCEDURE process_orders()\nBEGIN\n    DECLARE done INT DEFAULT FALSE;\n    DECLARE v_id INT;\n    DECLARE cursor1 CURSOR FOR \n        SELECT id FROM commandes;\n    DECLARE CONTINUE HANDLER FOR \n        NOT FOUND SET done = TRUE;\n    \n    OPEN cursor1;\n    \n    read_loop: LOOP\n        FETCH cursor1 INTO v_id;\n        IF done THEN\n            LEAVE read_loop;\n        END IF;\n        -- Traitement pour chaque ligne\n    END LOOP;\n    \n    CLOSE cursor1;\nEND //\nDELIMITER ;\n\n⚠️ Lent, à éviter si possible",
+      "author": "Admin",
+      "createdAt": "2025-01-16T14:30:00Z"
+    }
+  ],
+  "categories": [
+    "Tous",
+    "Requêtes de base",
+    "Modification de données",
+    "Jointures",
+    "Agrégation",
+    "DDL - Définition",
+    "Concepts fondamentaux",
+    "Optimisation Avancée",
+    "Concepts Avancés",
+    "Transactions"
+  ]
+}
