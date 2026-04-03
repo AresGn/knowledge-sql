@@ -1,0 +1,144 @@
+{
+  "quizzes": [
+    {
+      "id": 1,
+      "category": "Requêtes de base",
+      "question": "Quelle commande SQL permet de sélectionner toutes les colonnes d'une table?",
+      "options": ["SELECT * FROM", "SELECT ALL FROM", "GET * FROM", "FIND * FROM"],
+      "correctAnswer": 0
+    },
+    {
+      "id": 2,
+      "category": "Requêtes de base",
+      "question": "Quelle clause permet de filtrer les résultats selon une condition?",
+      "options": ["FILTER", "WHERE", "HAVING", "WHEN"],
+      "correctAnswer": 1
+    },
+    {
+      "id": 3,
+      "category": "Requêtes de base",
+      "question": "Comment trier les résultats par ordre croissant?",
+      "options": ["ORDER BY col ASC", "ORDER BY col DESC", "SORT BY col", "GROUP BY col"],
+      "correctAnswer": 0
+    },
+    {
+      "id": 4,
+      "category": "Requêtes de base",
+      "question": "Quelle commande limite le nombre de résultats retournés?",
+      "options": ["TAKE 10", "LIMIT 10", "TOP 10", "MAX 10"],
+      "correctAnswer": 1
+    },
+    {
+      "id": 5,
+      "category": "Modification de données",
+      "question": "Quelle commande SQL permet d'insérer une nouvelle ligne dans une table?",
+      "options": ["ADD", "INSERT", "CREATE", "NEW"],
+      "correctAnswer": 1
+    },
+    {
+      "id": 6,
+      "category": "Modification de données",
+      "question": "Quelle commande SQL permet de modifier des données existantes?",
+      "options": ["CHANGE", "MODIFY", "UPDATE", "EDIT"],
+      "correctAnswer": 2
+    },
+    {
+      "id": 7,
+      "category": "Modification de données",
+      "question": "Quelle commande SQL permet de supprimer des données?",
+      "options": ["DROP", "REMOVE", "DELETE", "ERASE"],
+      "correctAnswer": 2
+    },
+    {
+      "id": 8,
+      "category": "Jointures",
+      "question": "Quel type de JOIN retourne uniquement les lignes qui ont une correspondance dans les deux tables?",
+      "options": ["LEFT JOIN", "RIGHT JOIN", "INNER JOIN", "FULL JOIN"],
+      "correctAnswer": 2
+    },
+    {
+      "id": 9,
+      "category": "Jointures",
+      "question": "Quel type de JOIN retourne toutes les lignes de la table de gauche?",
+      "options": ["INNER JOIN", "LEFT JOIN", "RIGHT JOIN", "CROSS JOIN"],
+      "correctAnswer": 1
+    },
+    {
+      "id": 10,
+      "category": "Jointures",
+      "question": "Quelle clause est utilisée pour spécifier la condition de jointure?",
+      "options": ["WHERE", "ON", "USING", "WITH"],
+      "correctAnswer": 1
+    },
+    {
+      "id": 11,
+      "category": "Agrégation",
+      "question": "Quelle fonction SQL permet de compter le nombre de lignes?",
+      "options": ["SUM()", "COUNT()", "AVG()", "TOTAL()"],
+      "correctAnswer": 1
+    },
+    {
+      "id": 12,
+      "category": "Agrégation",
+      "question": "Quelle fonction SQL calcule la moyenne d'une colonne numérique?",
+      "options": ["SUM()", "COUNT()", "AVG()", "MEAN()"],
+      "correctAnswer": 2
+    },
+    {
+      "id": 13,
+      "category": "Agrégation",
+      "question": "Quelle clause est utilisée pour grouper les résultats par valeur?",
+      "options": ["GROUP BY", "ORDER BY", "SORT BY", "DISTINCT BY"],
+      "correctAnswer": 0
+    },
+    {
+      "id": 14,
+      "category": "Agrégation",
+      "question": "Quelle clause permet de filtrer les groupes après un GROUP BY?",
+      "options": ["WHERE", "HAVING", "FILTER", "GROUP WHERE"],
+      "correctAnswer": 1
+    },
+    {
+      "id": 15,
+      "category": "DDL - Définition",
+      "question": "Quelle commande SQL crée une nouvelle table?",
+      "options": ["CREATE TABLE", "NEW TABLE", "ADD TABLE", "MAKE TABLE"],
+      "correctAnswer": 0
+    },
+    {
+      "id": 16,
+      "category": "DDL - Définition",
+      "question": "Quelle commande SQL supprime définitivement une table?",
+      "options": ["DELETE TABLE", "DROP TABLE", "REMOVE TABLE", "CLEAR TABLE"],
+      "correctAnswer": 1
+    },
+    {
+      "id": 17,
+      "category": "DDL - Définition",
+      "question": "Quelle commande SQL ajoute une nouvelle colonne à une table?",
+      "options": ["ADD COLUMN", "INSERT COLUMN", "CREATE COLUMN", "NEW COLUMN"],
+      "correctAnswer": 0
+    },
+    {
+      "id": 18,
+      "category": "Concepts fondamentaux",
+      "question": "Quelle est la clé primaire?",
+      "options": ["Une clé étrangère", "Un identifiant unique", "Un index", "Une contrainte"],
+      "correctAnswer": 1
+    },
+    {
+      "id": 19,
+      "category": "Concepts fondamentaux",
+      "question": "A quoi sert une clé étrangère?",
+      "options": ["À identifier une ligne de manière unique", "À lier deux tables entre elles", "À crypter les données", "À trier les résultats"],
+      "correctAnswer": 1
+    },
+    {
+      "id": 20,
+      "category": "Concepts fondamentaux",
+      "question": "Que signifie NULL en SQL?",
+      "options": ["Zéro", "Chaîne vide", "Valeur inconnue/absente", "Erreur"],
+      "correctAnswer": 2
+    }
+  ]
+}

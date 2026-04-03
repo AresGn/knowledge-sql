@@ -10,9 +10,10 @@ class DataManager {
     if (stored) {
       this.data = JSON.parse(stored);
       this.ready = true;
-      return;
+    } else {
+      await this.loadFromFile();
     }
-    await this.loadFromFile();
+    await this.loadQuiz();
   }
 
   async loadFromFile() {
@@ -114,6 +115,28 @@ class DataManager {
     a.download = 'km_sql_backup.json';
     a.click();
     URL.revokeObjectURL(url);
+  }
+
+  // Quiz methods
+  quizData = { quizzes: [] };
+
+  async loadQuiz() {
+    try {
+      const response = await fetch('./data/quiz.json');
+      this.quizData = await response.json();
+    } catch (e) {
+      console.warn('Impossible de charger les quiz');
+    }
+  }
+
+  getQuizCategories() {
+    const categories = new Set();
+    (this.quizData.quizzes || []).forEach(q => categories.add(q.category));
+    return Array.from(categories);
+  }
+
+  getQuizByCategory(category) {
+    return (this.quizData.quizzes || []).filter(q => q.category === category);
   }
 }
 
